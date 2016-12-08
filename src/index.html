@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Neighborhood Map</title>
+  <link rel="stylesheet"  href="css/styles.css">
+  <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-md-12">
+        <h1>Neighbourhood Search</h1>
+      </div>
+    </header>
+    <div class="row">
+      <aside class="col-md-3">
+        <div class="row">
+          <div class="col-md-12">
+            <select name="" id="" class="form-control" data-bind="options:facilityNames,
+                value: currentfacility">
+          <option data-bind="text:facilityType"></option>
+        </select>
+          </div>
+          <div class="col-md-12">
+            <ul id="list" data-bind="foreach:currentfacilityData">
+              <li><a data-bind="text:$data.title, click:$parent.loadLocation"></a></li>
+            </ul>
+          </div>
+          <div class="col-md-12" style="padding:5px">
+            <p id="descriptions" >Title: <span data-bind="text:selectedPoi"></span></p>
+            <p id="descriptions" >City: <span data-bind="text:selectedPoiCiti"></span></p>
+             <p id="descriptions">Country: <span data-bind="text:selectedPoiCountry"></span></p>
+              <p id="descriptions">Latitude: <span data-bind="text:selectedPoiLat"></span></p>
+               <p id="descriptions">Longitude: <span data-bind="text:selectedPoiLng"></span></p>
+          </div>
+        </div>
+
+      </aside>
+      <main>
+      <div class="col-md-9">
+        <div id="map"></div>
+      </div>
+      </main>
+    </div>
+    <section></section>
+    <footer><center>Udacity Naanodegree Neighborhood Map project</center></footer>
+    <script src="js/errorhandler.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src='lib/knockout-3.4.1.js'></script>
+    <script src='lib/knockout-mapping-plugin.min.js'></script>
+    <script type="text/javascript" src="lib/bootstrap/js/jquery-3.1.0.min.js"></script>
+    <script src="js/zomato.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/app.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4-RHXb0nwB0CtJnAwwQ8vQ3pr3QW9ptQ&v=3&callback=myMap.initMap" onerror="errorHandling()"></script>
+    
+  </div>
+</body>
+</body>
+
+</html>
